@@ -2,62 +2,78 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rewakoglobal.lovable.app/</loc>
+    <loc>https://nusantaraglobal.pages.dev/</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
 
+  <!-- About Us (EN / ID) -->
+  <url>
+    <loc>https://nusantaraglobal.pages.dev/about</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <!-- Contact (EN / ID) -->
+  <url>
+    <loc>https://nusantaraglobal.pages.dev/contact</loc>
+    <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
   <!-- Terms of Service (EN / ID) -->
   <url>
-    <loc>https://rewakoglobal.lovable.app/en/terms</loc>
+    <loc>https://nusantaraglobal.pages.dev/en/terms</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rewakoglobal.lovable.app/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://rewakoglobal.lovable.app/id/terms"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rewakoglobal.lovable.app/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nusantaraglobal.pages.dev/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nusantaraglobal.pages.dev/id/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nusantaraglobal.pages.dev/en/terms"/>
   </url>
   <url>
-    <loc>https://rewakoglobal.lovable.app/id/terms</loc>
+    <loc>https://nusantaraglobal.pages.dev/id/terms</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rewakoglobal.lovable.app/en/terms"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://rewakoglobal.lovable.app/id/terms"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rewakoglobal.lovable.app/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nusantaraglobal.pages.dev/en/terms"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nusantaraglobal.pages.dev/id/terms"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nusantaraglobal.pages.dev/en/terms"/>
   </url>
 
   <!-- Privacy Policy (EN / ID) -->
   <url>
-    <loc>https://rewakoglobal.lovable.app/en/privacy</loc>
+    <loc>https://nusantaraglobal.pages.dev/en/privacy</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rewakoglobal.lovable.app/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://rewakoglobal.lovable.app/id/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rewakoglobal.lovable.app/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nusantaraglobal.pages.dev/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nusantaraglobal.pages.dev/id/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nusantaraglobal.pages.dev/en/privacy"/>
   </url>
   <url>
-    <loc>https://rewakoglobal.lovable.app/id/privacy</loc>
+    <loc>https://nusantaraglobal.pages.dev/id/privacy</loc>
     <lastmod>2026-04-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rewakoglobal.lovable.app/en/privacy"/>
-    <xhtml:link rel="alternate" hreflang="id" href="https://rewakoglobal.lovable.app/id/privacy"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rewakoglobal.lovable.app/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://nusantaraglobal.pages.dev/en/privacy"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://nusantaraglobal.pages.dev/id/privacy"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://nusantaraglobal.pages.dev/en/privacy"/>
   </url>
 
   <!-- Products -->
-  <url><loc>https://rewakoglobal.lovable.app/product/specialty-coffee</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/candlenut</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/turmeric</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/palm-oil</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/cloves</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/nutmeg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/tuna</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/coconut-products</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/cocoa</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/rubber</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://rewakoglobal.lovable.app/product/cinnamon-vanilla</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/specialty-coffee</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/candlenut</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/turmeric</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/palm-oil</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/cloves</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/nutmeg</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/tuna</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/coconut-products</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/cocoa</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/rubber</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://nusantaraglobal.pages.dev/product/cinnamon-vanilla</loc><lastmod>2026-04-28</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>
 </urlset>
