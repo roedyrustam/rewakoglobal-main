@@ -11,7 +11,7 @@ interface SEOProps {
   structuredData?: Record<string, any>;
 }
 
-const DEFAULT_SITE_URL = 'https://www.rewakoglobal.com';
+const DEFAULT_SITE_URL = 'https://nusantaraglobal.pages.dev';
 
 export const SEO = ({
   title,

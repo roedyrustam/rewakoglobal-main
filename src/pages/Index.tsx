@@ -26,8 +26,8 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "PT Nusantara Global Export",
-    "url": "https://www.rewakoglobal.com",
-    "logo": "https://www.rewakoglobal.com/logo.png",
+    "url": "https://nusantaraglobal.pages.dev",
+    "logo": "https://nusantaraglobal.pages.dev/logo.png",
     "description": meta.description,
     "contactPoint": {
       "@type": "ContactPoint",

@@ -14,7 +14,7 @@ import { useQuoteModal } from '@/contexts/QuoteModalContext';
 import { useState, useEffect } from 'react';
 import { SEO } from '@/components/SEO';
 
-const SITE = 'https://www.rewakoglobal.com';
+const SITE = 'https://nusantaraglobal.pages.dev';
 const WHATSAPP_NUMBER = '6281241003047';
 
 export default function ProductDetail() {
