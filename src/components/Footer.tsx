@@ -87,15 +87,15 @@ export const Footer = () => {
             <h3 className="font-heading font-bold text-lg mb-4">{t('certifications')}</h3>
             <div className="space-y-2 text-sm text-white/70">
               <div className="flex items-center space-x-2">
-                <span className="text-accent">🏆</span>
+                <span className="text-accent" role="img" aria-label="Trophy">🏆</span>
                 <span>Bank Indonesia REWAKO</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-accent">🌏</span>
+                <span className="text-accent" role="img" aria-label="Globe">🌏</span>
                 <span>ITPC Supported</span>
               </div>
               <div className="flex items-center space-x-2">
-                <span className="text-accent">✓</span>
+                <span className="text-accent" role="img" aria-label="Checkmark">✓</span>
                 <span>ISO 22000 Certified</span>
               </div>
             </div>

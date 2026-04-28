@@ -105,7 +105,7 @@ export default function ProductDetail() {
 
       <Navbar />
 
-      <main className="pt-16 min-h-screen bg-background">
+      <main id="main-content" className="pt-16 min-h-screen bg-background">
         {/* Breadcrumb */}
         <div className="bg-secondary/30 py-4">
           <div className="container mx-auto px-4">

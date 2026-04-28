@@ -63,7 +63,7 @@ const Index = () => {
         </script>
       </Helmet>
 
-      <div className="min-h-screen bg-background">
+      <div id="main-content" className="min-h-screen bg-background">
         <Navbar />
         <Hero />
         <About />
