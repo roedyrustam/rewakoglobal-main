@@ -12,10 +12,10 @@ export const Navbar = () => {
   const { openQuoteModal } = useQuoteModal();
 
   const navLinks = [
-    { href: '#home', label: t('home') },
-    { href: '#about', label: t('about') },
-    { href: '#products', label: t('products') },
-    { href: '#contact', label: t('contact') },
+    { to: '/', label: t('home'), isHash: false },
+    { to: '/about', label: t('about'), isHash: false },
+    { to: '/#products', label: t('products'), isHash: true },
+    { to: '/contact', label: t('contact'), isHash: false },
   ];
 
   return (
@@ -41,15 +41,25 @@ export const Navbar = () => {
 
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
-            {navLinks.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
-              >
-                {link.label}
-              </a>
-            ))}
+            {navLinks.map((link) => 
+              link.isHash ? (
+                <a
+                  key={link.to}
+                  href={link.to}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                >
+                  {link.label}
+                </a>
+              ) : (
+                <Link
+                  key={link.to}
+                  to={link.to}
+                  className="text-foreground hover:text-accent transition-colors duration-200 font-medium"
+                >
+                  {link.label}
+                </Link>
+              )
+            )}
           </div>
 
           {/* Right Section */}
@@ -97,16 +107,27 @@ export const Navbar = () => {
             className="md:hidden border-t border-border bg-background"
           >
             <div className="container mx-auto px-4 py-4 space-y-4">
-              {navLinks.map((link) => (
-                <a
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setIsOpen(false)}
-                  className="block py-2 text-foreground hover:text-accent transition-colors font-medium"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {navLinks.map((link) => 
+                link.isHash ? (
+                  <a
+                    key={link.to}
+                    href={link.to}
+                    onClick={() => setIsOpen(false)}
+                    className="block py-2 text-foreground hover:text-accent transition-colors font-medium"
+                  >
+                    {link.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={link.to}
+                    to={link.to}
+                    onClick={() => setIsOpen(false)}
+                    className="block py-2 text-foreground hover:text-accent transition-colors font-medium"
+                  >
+                    {link.label}
+                  </Link>
+                )
+              )}
               <div className="pt-4 border-t border-border space-y-3">
                 <Button
                   variant="outline"

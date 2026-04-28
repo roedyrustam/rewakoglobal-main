@@ -6,10 +6,10 @@ export const Footer = () => {
   const { language, t } = useLanguage();
 
   const quickLinks = [
-    { href: '#home', label: t('home') },
-    { href: '#about', label: t('about') },
-    { href: '#products', label: t('products') },
-    { href: '#contact', label: t('contact') },
+    { to: '/', label: t('home'), isHash: false },
+    { to: '/about', label: t('about'), isHash: false },
+    { to: '/#products', label: t('products'), isHash: true },
+    { to: '/contact', label: t('contact'), isHash: false },
   ];
 
   const socialLinks = [
@@ -45,13 +45,22 @@ export const Footer = () => {
             <h3 className="font-heading font-bold text-lg mb-4">{t('quickLinks')}</h3>
             <ul className="space-y-2">
               {quickLinks.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
-                    className="text-white/70 hover:text-accent transition-colors text-sm"
-                  >
-                    {link.label}
-                  </a>
+                <li key={link.to}>
+                  {link.isHash ? (
+                    <a
+                      href={link.to}
+                      className="text-white/70 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.label}
+                    </a>
+                  ) : (
+                    <Link
+                      to={link.to}
+                      className="text-white/70 hover:text-accent transition-colors text-sm"
+                    >
+                      {link.label}
+                    </Link>
+                  )}
                 </li>
               ))}
             </ul>
