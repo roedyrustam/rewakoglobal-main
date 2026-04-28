@@ -1,5 +1,4 @@
 import { useParams, useNavigate } from 'react-router-dom';
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { products } from '@/data/products';
 import { getProductImage } from '@/data/productImages';
@@ -13,6 +12,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useQuoteModal } from '@/contexts/QuoteModalContext';
 import { useState, useEffect } from 'react';
+import { SEO } from '@/components/SEO';
 
 const SITE = 'https://www.rewakoglobal.com';
 const WHATSAPP_NUMBER = '6281241003047';
@@ -57,7 +57,7 @@ export default function ProductDetail() {
     openQuoteModal();
   };
 
-  const productUrl = `${SITE}/product/${product.id}`;
+  const productUrl = `/product/${product.id}`;
   const metaTitle = language === 'id'
     ? `${product.name.id} | PT Nusantara Global Export`
     : `${product.name.en} | PT Nusantara Global Export`;
@@ -75,7 +75,7 @@ export default function ProductDetail() {
     "countryOfOrigin": product.origin,
     "offers": {
       "@type": "Offer",
-      "url": productUrl,
+      "url": `${SITE}${productUrl}`,
       "availability": "https://schema.org/InStock",
       "priceCurrency": "USD",
       "seller": { "@type": "Organization", "name": "PT Nusantara Global Export" }
@@ -84,24 +84,14 @@ export default function ProductDetail() {
 
   return (
     <>
-      <Helmet>
-        <html lang={language} />
-        <title>{metaTitle}</title>
-        <meta name="description" content={metaDesc} />
-        <link rel="canonical" href={productUrl} />
-        <meta name="robots" content="index, follow" />
-        <meta property="og:type" content="product" />
-        <meta property="og:title" content={metaTitle} />
-        <meta property="og:description" content={metaDesc} />
-        <meta property="og:url" content={productUrl} />
-        <meta property="og:image" content={`${SITE}${getProductImage(product.id)}`} />
-        <meta property="og:locale" content={language === 'id' ? 'id_ID' : 'en_US'} />
-        <meta property="og:locale:alternate" content={language === 'id' ? 'en_US' : 'id_ID'} />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content={metaTitle} />
-        <meta name="twitter:description" content={metaDesc} />
-        <script type="application/ld+json">{JSON.stringify(structuredData)}</script>
-      </Helmet>
+      <SEO 
+        title={metaTitle}
+        description={metaDesc}
+        url={productUrl}
+        type="product"
+        image={getProductImage(product.id)}
+        structuredData={structuredData}
+      />
 
       <Navbar />
 
