@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://rewakoglobal.lovable.app/sitemap.xml
+Sitemap: https://nusantaraglobal.pages.dev/sitemap.xml

@@ -31,8 +31,8 @@ const ContactPage = () => {
   });
 
   const meta = {
-    title: language === 'id' 
-      ? 'Hubungi Kami - PT Nusantara Global Export' 
+    title: language === 'id'
+      ? 'Hubungi Kami - PT Nusantara Global Export'
       : 'Contact Us - PT Nusantara Global Export',
     description: t('contactHeroSubtitle'),
   };
@@ -41,10 +41,10 @@ const ContactPage = () => {
     e.preventDefault();
     try {
       contactFormSchema.parse(formData);
-      
+
       const waMessage = `*New Contact Inquiry*\n\nName: ${formData.name}\nEmail: ${formData.email}\nSubject: ${formData.subject}\n\nMessage: ${formData.message}`;
       const whatsappUrl = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(waMessage)}`;
-      
+
       window.open(whatsappUrl, '_blank');
       toast.success('Redirecting to WhatsApp...');
       setFormData({ name: '', email: '', subject: '', message: '' });
@@ -57,7 +57,7 @@ const ContactPage = () => {
 
   return (
     <>
-      <SEO 
+      <SEO
         title={meta.title}
         description={meta.description}
         url="/contact"
@@ -127,8 +127,8 @@ const ContactPage = () => {
                     </div>
                     <div>
                       <h4 className="font-bold text-foreground mb-1">{t('emailUs')}</h4>
-                      <a href="mailto:info@rewakoglobal.com" className="text-muted-foreground hover:text-accent transition-colors">
-                        info@rewakoglobal.com
+                      <a href="mailto:support@bijidata.online" className="text-muted-foreground hover:text-accent transition-colors">
+                        support@bijidata.online
                       </a>
                     </div>
                   </div>
@@ -165,7 +165,7 @@ const ContactPage = () => {
                 className="bg-secondary/20 border border-border p-8 rounded-3xl shadow-card"
               >
                 <h3 className="font-heading text-2xl font-bold mb-6">{t('contactFormTitle')}</h3>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-4">
                   <div>
                     <Input
