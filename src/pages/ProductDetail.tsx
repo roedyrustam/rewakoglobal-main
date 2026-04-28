@@ -11,6 +11,7 @@ import { FaWhatsapp } from 'react-icons/fa';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
+import { useQuoteModal } from '@/contexts/QuoteModalContext';
 import { useState, useEffect } from 'react';
 
 const SITE = 'https://www.rewakoglobal.com';
@@ -20,6 +21,7 @@ export default function ProductDetail() {
   const { id } = useParams<{ id: string }>();
   const navigate = useNavigate();
   const { language, t } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
   const [imageModalOpen, setImageModalOpen] = useState(false);
 
   const product = products.find(p => p.id === id);
@@ -34,8 +36,8 @@ export default function ProductDetail() {
     return (
       <div className="min-h-screen flex items-center justify-center">
         <div className="text-center">
-          <h1 className="text-2xl font-bold mb-4">Product not found</h1>
-          <Button onClick={() => navigate('/')}>Go Home</Button>
+          <h1 className="text-2xl font-bold mb-4">{t('productNotFound')}</h1>
+          <Button onClick={() => navigate('/')}>{t('goHome')}</Button>
         </div>
       </div>
     );
@@ -52,7 +54,7 @@ export default function ProductDetail() {
   };
 
   const handleQuoteRequest = () => {
-    document.getElementById('quote-modal-trigger')?.click();
+    openQuoteModal();
   };
 
   const productUrl = `${SITE}/product/${product.id}`;
@@ -135,7 +137,7 @@ export default function ProductDetail() {
                 onClick={() => navigate('/#products')}
               >
                 <ArrowLeft className="mr-2 w-4 h-4" />
-                {language === 'en' ? 'Back to Products' : 'Kembali ke Produk'}
+                {t('backToProducts')}
               </Button>
             </motion.div>
             
@@ -156,6 +158,7 @@ export default function ProductDetail() {
                       src={getProductImage(product.id)}
                       alt={product.name[language]}
                       className="w-full h-[500px] object-cover transition-transform duration-500 group-hover:scale-105"
+                      loading="lazy"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                       <div className="bg-white/90 backdrop-blur-sm rounded-full p-4">
@@ -164,7 +167,7 @@ export default function ProductDetail() {
                     </div>
                   </div>
                   <p className="text-center text-sm text-muted-foreground mt-3">
-                    {language === 'en' ? 'Click image to enlarge' : 'Klik gambar untuk memperbesar'}
+                    {t('clickToEnlarge')}
                   </p>
                 </div>
               </motion.div>
@@ -199,7 +202,7 @@ export default function ProductDetail() {
                   <div className="flex items-center space-x-2 bg-secondary/50 px-4 py-2.5 rounded-lg">
                     <MapPin className="w-5 h-5 text-primary" />
                     <div>
-                      <div className="text-xs text-muted-foreground">{language === 'en' ? 'Origin' : 'Asal'}</div>
+                      <div className="text-xs text-muted-foreground">{t('origin')}</div>
                       <div className="font-semibold text-foreground">{product.origin}</div>
                     </div>
                   </div>
@@ -208,7 +211,7 @@ export default function ProductDetail() {
                 {/* Certifications Badges */}
                 <div>
                   <h3 className="font-semibold text-sm text-muted-foreground mb-3">
-                    {language === 'en' ? 'Certifications' : 'Sertifikasi'}
+                    {t('certLabel')}
                   </h3>
                   <div className="flex flex-wrap gap-2">
                     {product.certifications.map((cert, index) => (
@@ -226,7 +229,7 @@ export default function ProductDetail() {
                 {/* Min Order Highlight */}
                 <div className="bg-gradient-to-r from-accent/10 to-accent/5 border border-accent/20 rounded-xl p-4">
                   <div className="text-sm text-muted-foreground mb-1">
-                    {language === 'en' ? 'Minimum Order Quantity' : 'Kuantitas Pesanan Minimum'}
+                    {t('moq')}
                   </div>
                   <div className="text-2xl font-bold text-accent">{product.minOrder}</div>
                 </div>
@@ -239,7 +242,7 @@ export default function ProductDetail() {
                     onClick={handleQuoteRequest}
                   >
                     <FileText className="mr-2 w-5 h-5" />
-                    {language === 'en' ? 'Request Quote' : 'Minta Penawaran'}
+                    {t('requestQuote')}
                   </Button>
                   <Button
                     size="lg"
@@ -271,7 +274,7 @@ export default function ProductDetail() {
                   <CardContent className="p-8">
                     <h2 className="font-heading text-2xl font-bold mb-6 flex items-center">
                       <Package className="mr-3 w-6 h-6 text-primary" />
-                      {language === 'en' ? 'Technical Specifications' : 'Spesifikasi Teknis'}
+                      {t('techSpecs')}
                     </h2>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                       {product.specifications[language].map((spec, index) => (
@@ -304,7 +307,7 @@ export default function ProductDetail() {
                   <CardContent className="p-6">
                     <h3 className="font-heading text-lg font-bold mb-4 flex items-center">
                       <Package className="mr-2 w-5 h-5 text-primary" />
-                      {language === 'en' ? 'Packaging Options' : 'Opsi Kemasan'}
+                      {t('packagingOptions')}
                     </h3>
                     <ul className="space-y-3">
                       {product.packaging[language].map((pack, index) => (
@@ -327,12 +330,10 @@ export default function ProductDetail() {
                 <Card className="bg-gradient-to-br from-primary to-navy text-white">
                   <CardContent className="p-6">
                     <h3 className="font-heading text-lg font-bold mb-3">
-                      {language === 'en' ? 'Need Custom Solutions?' : 'Butuh Solusi Khusus?'}
+                      {t('needCustom')}
                     </h3>
                     <p className="text-white/90 text-sm mb-4">
-                      {language === 'en' 
-                        ? 'We offer customized packaging and delivery terms to meet your specific requirements.'
-                        : 'Kami menawarkan kemasan dan syarat pengiriman yang disesuaikan dengan kebutuhan spesifik Anda.'}
+                      {t('needCustomDesc')}
                     </p>
                     <Button
                       variant="secondary"
@@ -340,7 +341,7 @@ export default function ProductDetail() {
                       className="w-full"
                       onClick={handleWhatsAppInquiry}
                     >
-                      {language === 'en' ? 'Contact Us' : 'Hubungi Kami'}
+                      {t('contactUs')}
                     </Button>
                   </CardContent>
                 </Card>
@@ -361,12 +362,10 @@ export default function ProductDetail() {
                 className="text-center mb-12"
               >
                 <h2 className="font-heading text-3xl md:text-4xl font-bold mb-4">
-                  {language === 'en' ? 'Related Products' : 'Produk Terkait'}
+                  {t('relatedProducts')}
                 </h2>
                 <p className="text-muted-foreground">
-                  {language === 'en' 
-                    ? 'Explore more premium Indonesian commodities'
-                    : 'Jelajahi lebih banyak komoditas premium Indonesia'}
+                  {t('relatedProductsDesc')}
                 </p>
               </motion.div>
               
@@ -390,7 +389,8 @@ export default function ProductDetail() {
                         <img
                           src={getProductImage(relatedProduct.id)}
                           alt={relatedProduct.name[language]}
-                          className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      loading="lazy"
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                       </div>

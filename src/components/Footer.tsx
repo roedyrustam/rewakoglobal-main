@@ -134,7 +134,7 @@ export const Footer = () => {
             </Link>
             <a href="/sitemap.xml" className="hover:text-accent transition-colors">Sitemap</a>
           </div>
-          <p>© 2024 PT Nusantara Global Export. {t('allRights')}</p>
+          <p>© {new Date().getFullYear()} PT Nusantara Global Export. {t('allRights')}</p>
         </div>
       </div>
     </footer>

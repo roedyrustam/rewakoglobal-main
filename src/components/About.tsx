@@ -44,21 +44,18 @@ export const About = () => {
               src="/logo.png" 
               alt="REWAKO Ekspor Sulawesi Selatan" 
               className="h-32 w-auto"
+              loading="lazy"
             />
           </div>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-            {language === 'en' ? 'About Us' : 'Tentang Kami'}
+            {t('aboutUs')}
           </h2>
           <div className="space-y-4 text-muted-foreground text-lg leading-relaxed">
             <p>
-              {language === 'en' 
-                ? 'PT Nusantara Global Export is a proud member of REWAKO Ekspor Sulawesi Selatan (Bank Indonesia Export Community for South Sulawesi). We are committed to promoting Indonesian commodities to international markets with the highest quality standards.'
-                : 'PT Nusantara Global Export adalah anggota bangga dari REWAKO Ekspor Sulawesi Selatan (Kelompok Kerja Ekspor Bank Indonesia untuk Sulawesi Selatan). Kami berkomitmen mempromosikan komoditas Indonesia ke pasar internasional dengan standar kualitas tertinggi.'}
+              {t('aboutP1')}
             </p>
             <p>
-              {language === 'en'
-                ? 'As a REWAKO-certified exporter, we adhere to strict quality control, documentation standards, and international trade compliance. Our membership ensures credibility and trustworthiness in every transaction, backed by Bank Indonesia\'s rigorous certification process.'
-                : 'Sebagai eksportir bersertifikat REWAKO, kami mematuhi kontrol kualitas ketat, standar dokumentasi, dan kepatuhan perdagangan internasional. Keanggotaan kami menjamin kredibilitas dan kepercayaan dalam setiap transaksi, didukung oleh proses sertifikasi Bank Indonesia yang ketat.'}
+              {t('aboutP2')}
             </p>
           </div>
         </motion.div>

@@ -2,12 +2,14 @@ import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useQuoteModal } from '@/contexts/QuoteModalContext';
 import { Menu, X, Globe } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const { language, setLanguage, t } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
 
   const navLinks = [
     { href: '#home', label: t('home') },
@@ -17,7 +19,7 @@ export const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm">
+    <nav className="fixed top-0 left-0 right-0 z-50 bg-background/95 backdrop-blur-md border-b border-border shadow-sm" aria-label="Main navigation">
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
@@ -58,6 +60,7 @@ export const Navbar = () => {
               size="sm"
               onClick={() => setLanguage(language === 'en' ? 'id' : 'en')}
               className="hidden sm:flex items-center space-x-2"
+              aria-label={language === 'en' ? 'Switch to Bahasa Indonesia' : 'Switch to English'}
             >
               <Globe className="w-4 h-4" />
               <span className="uppercase font-medium">{language}</span>
@@ -66,10 +69,7 @@ export const Navbar = () => {
             {/* Get Quote Button */}
             <Button
               className="hidden md:flex bg-accent hover:bg-accent/90 text-accent-foreground"
-              onClick={() => {
-                const modal = document.getElementById('quote-modal-trigger');
-                if (modal) modal.click();
-              }}
+              onClick={openQuoteModal}
             >
               {t('getQuote')}
             </Button>
@@ -78,7 +78,8 @@ export const Navbar = () => {
             <button
               onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 rounded-lg hover:bg-secondary transition-colors"
-              aria-label="Toggle menu"
+              aria-label={isOpen ? 'Close menu' : 'Open menu'}
+              aria-expanded={isOpen}
             >
               {isOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -122,8 +123,7 @@ export const Navbar = () => {
                   className="w-full bg-accent hover:bg-accent/90 text-accent-foreground"
                   onClick={() => {
                     setIsOpen(false);
-                    const modal = document.getElementById('quote-modal-trigger');
-                    if (modal) modal.click();
+                    openQuoteModal();
                   }}
                 >
                   {t('getQuote')}

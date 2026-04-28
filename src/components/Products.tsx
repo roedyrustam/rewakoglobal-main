@@ -46,6 +46,7 @@ export const Products = () => {
                   <img
                     src={getProductImage(product.id)}
                     alt={product.name[language]}
+                    loading="lazy"
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

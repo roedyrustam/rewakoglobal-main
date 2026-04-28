@@ -1,11 +1,13 @@
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import { useQuoteModal } from '@/contexts/QuoteModalContext';
 import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
 import heroImage from '@/assets/hero-image.jpg';
 
 export const Hero = () => {
   const { t } = useLanguage();
+  const { openQuoteModal } = useQuoteModal();
 
   return (
     <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -55,10 +57,7 @@ export const Hero = () => {
                 size="lg"
                 variant="outline"
                 className="bg-white/10 hover:bg-white/20 text-white border-white/30 backdrop-blur-sm text-lg h-14 px-8"
-                onClick={() => {
-                  const modal = document.getElementById('quote-modal-trigger');
-                  if (modal) modal.click();
-                }}
+                onClick={openQuoteModal}
               >
                 {t('contactUs')}
               </Button>
@@ -73,7 +72,7 @@ export const Hero = () => {
             >
               <div className="flex items-center space-x-2 text-white/80">
                 <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-2xl">🏆</span>
+                  <span className="text-2xl" role="img" aria-label="Trophy">🏆</span>
                 </div>
                 <div>
                   <div className="font-semibold text-white">REWAKO</div>
@@ -83,7 +82,7 @@ export const Hero = () => {
               
               <div className="flex items-center space-x-2 text-white/80">
                 <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-2xl">🌏</span>
+                  <span className="text-2xl" role="img" aria-label="Globe">🌏</span>
                 </div>
                 <div>
                   <div className="font-semibold text-white">ITPC</div>
@@ -93,7 +92,7 @@ export const Hero = () => {
               
               <div className="flex items-center space-x-2 text-white/80">
                 <div className="w-12 h-12 bg-white/10 rounded-lg flex items-center justify-center backdrop-blur-sm">
-                  <span className="text-2xl">✓</span>
+                  <span className="text-2xl" role="img" aria-label="Checkmark">✓</span>
                 </div>
                 <div>
                   <div className="font-semibold text-white">ISO 22000</div>
