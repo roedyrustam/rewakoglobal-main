@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { Navbar } from '@/components/Navbar';
 import { Hero } from '@/components/Hero';
 import { About } from '@/components/About';
@@ -8,8 +7,7 @@ import { CatalogDownload } from '@/components/CatalogDownload';
 import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { useLanguage } from '@/contexts/LanguageContext';
-
-const SITE = 'https://www.rewakoglobal.com';
+import { SEO } from '@/components/SEO';
 
 const Index = () => {
   const { language } = useLanguage();
@@ -28,8 +26,8 @@ const Index = () => {
     "@context": "https://schema.org",
     "@type": "Organization",
     "name": "PT Nusantara Global Export",
-    "url": SITE,
-    "logo": `${SITE}/logo.png`,
+    "url": "https://www.rewakoglobal.com",
+    "logo": "https://www.rewakoglobal.com/logo.png",
     "description": meta.description,
     "contactPoint": {
       "@type": "ContactPoint",
@@ -43,25 +41,13 @@ const Index = () => {
 
   return (
     <>
-      <Helmet>
-        <html lang={language} />
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <meta name="keywords" content="Indonesian export, coffee beans, coconut products, spices export, candlenut, turmeric, palm oil, cloves, nutmeg, tuna, cocoa, rubber, cinnamon, vanilla, REWAKO certified, Indonesian commodities" />
-        <meta name="robots" content="index, follow" />
-        <link rel="canonical" href={`${SITE}/`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={`${SITE}/`} />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:locale" content={language === 'id' ? 'id_ID' : 'en_US'} />
-        <meta property="og:locale:alternate" content={language === 'id' ? 'en_US' : 'id_ID'} />
-        <meta name="twitter:title" content={meta.title} />
-        <meta name="twitter:description" content={meta.description} />
-        <script type="application/ld+json">
-          {JSON.stringify(structuredData)}
-        </script>
-      </Helmet>
+      <SEO 
+        title={meta.title}
+        description={meta.description}
+        url="/"
+        structuredData={structuredData}
+        image="/og-image.png"
+      />
 
       <div id="main-content" className="min-h-screen bg-background">
         <Navbar />
