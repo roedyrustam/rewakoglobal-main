@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rewakoglobal.lovable.app/sitemap.xml
