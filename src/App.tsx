@@ -12,6 +12,8 @@ import Index from "./pages/Index";
 
 // Lazy-loaded pages — split into separate chunks
 const ProductDetail = lazy(() => import("./pages/ProductDetail"));
+const About = lazy(() => import("./pages/About"));
+const Contact = lazy(() => import("./pages/Contact"));
 const Terms = lazy(() => import("./pages/Terms"));
 const Privacy = lazy(() => import("./pages/Privacy"));
 const NotFound = lazy(() => import("./pages/NotFound"));
@@ -42,6 +44,15 @@ const App = () => {
                   <Routes>
                     <Route path="/" element={<Index />} />
                     <Route path="/product/:id" element={<ProductDetail />} />
+                    
+                    <Route path="/en/about" element={<About />} />
+                    <Route path="/id/about" element={<About />} />
+                    <Route path="/about" element={<About />} />
+
+                    <Route path="/en/contact" element={<Contact />} />
+                    <Route path="/id/contact" element={<Contact />} />
+                    <Route path="/contact" element={<Contact />} />
+
                     <Route path="/en/terms" element={<Terms />} />
                     <Route path="/id/terms" element={<Terms />} />
                     <Route path="/en/privacy" element={<Privacy />} />
