@@ -1,4 +1,3 @@
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
@@ -11,8 +10,8 @@ import { z } from 'zod';
 import { useState } from 'react';
 import contactBanner from '@/assets/contact-banner.png';
 import { MapPin, Mail, Phone, Send } from 'lucide-react';
+import { SEO } from '@/components/SEO';
 
-const SITE = 'https://www.rewakoglobal.com';
 const WHATSAPP_NUMBER = '6281241003047';
 
 const contactFormSchema = z.object({
@@ -58,15 +57,12 @@ const ContactPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <link rel="canonical" href={`${SITE}/${language}/contact`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={`${SITE}/og-image.png`} />
-      </Helmet>
+      <SEO 
+        title={meta.title}
+        description={meta.description}
+        url="/contact"
+        image="/og-contact.png"
+      />
 
       <div id="main-content" className="min-h-screen bg-background">
         <Navbar />

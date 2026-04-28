@@ -1,12 +1,10 @@
-import { Helmet } from 'react-helmet-async';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { motion } from 'framer-motion';
 import aboutBanner from '@/assets/about-banner.png';
 import { Award, Globe, Shield, Truck, Eye, Target } from 'lucide-react';
-
-const SITE = 'https://www.rewakoglobal.com';
+import { SEO } from '@/components/SEO';
 
 const AboutPage = () => {
   const { language, t } = useLanguage();
@@ -27,15 +25,12 @@ const AboutPage = () => {
 
   return (
     <>
-      <Helmet>
-        <title>{meta.title}</title>
-        <meta name="description" content={meta.description} />
-        <link rel="canonical" href={`${SITE}/${language}/about`} />
-        <meta property="og:type" content="website" />
-        <meta property="og:title" content={meta.title} />
-        <meta property="og:description" content={meta.description} />
-        <meta property="og:image" content={`${SITE}/og-image.png`} />
-      </Helmet>
+      <SEO 
+        title={meta.title}
+        description={meta.description}
+        url="/about"
+        image="/og-about.png"
+      />
 
       <div id="main-content" className="min-h-screen bg-background">
         <Navbar />
