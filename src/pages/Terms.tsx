@@ -5,7 +5,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const SITE = 'https://rewakoglobal.lovable.app';
+const SITE = 'https://www.rewakoglobal.com';
 
 const content = {
   en: {

@@ -9,7 +9,7 @@ import { Footer } from '@/components/Footer';
 import { WhatsAppButton } from '@/components/WhatsAppButton';
 import { useLanguage } from '@/contexts/LanguageContext';
 
-const SITE = 'https://rewakoglobal.lovable.app';
+const SITE = 'https://www.rewakoglobal.com';
 
 const Index = () => {
   const { language } = useLanguage();

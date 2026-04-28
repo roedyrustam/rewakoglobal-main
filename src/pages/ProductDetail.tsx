@@ -13,7 +13,7 @@ import { Navbar } from '@/components/Navbar';
 import { Footer } from '@/components/Footer';
 import { useState, useEffect } from 'react';
 
-const SITE = 'https://rewakoglobal.lovable.app';
+const SITE = 'https://www.rewakoglobal.com';
 const WHATSAPP_NUMBER = '6281241003047';
 
 export default function ProductDetail() {
